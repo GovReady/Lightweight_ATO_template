@@ -12,7 +12,7 @@ output:
   format: markdown
   title: System Information
   placement: action-buttons
-  template: |2
+  template: |
     <style>
       table {
         min-width: 450px;
@@ -56,17 +56,18 @@ questions:
   help: Enter the full or official name, not acronym
 - id: system_short_name
   title: System Short Name
-  prompt: |-
+  prompt: >-
     What is the system's nickname or abbreviation?
-    Great! The full name of IT System is "**{{system_name}}**." What about a short name,  acronym or nickname  for your IT System?
+
+    Great! The full name of IT System is "**{{system_name}}**." What about a short
+    name,  acronym or nickname  for your IT System?
   type: text
 - id: system_description
   title: System Description
-  prompt: >-
-    General system description.
-    Describe what the system does and its general purpose to your organization. (This
-    is your main description of {% if system_short_name %} {{system_short_name}}{%
-    else %}your IT System {% endif %}. We'll get a more technical description later.)
+  prompt: General system description. Describe what the system does and its general
+    purpose to your organization. (This is your main description of {% if system_short_name
+    %} {{system_short_name}}{% else %}your IT System {% endif %}. We'll get a more
+    technical description later.)
   type: longtext
   tags:
   - system_description
@@ -134,20 +135,18 @@ questions:
     value: ~
 - id: system_personal_data
   title: System has personal data
-  prompt: >-
-    IMPORTANT: Does the IT System collect, store, or process Personally Identifiable Information (PII)?
-    Answer "Yes" if the {{system_name}} collects, stores, or processes Personally Identifiable Information (PII)
-    about individuals. Answer  "No" if the system contains only publicly available
-    information and no information about individuals.
+  prompt: 'IMPORTANT: Does the IT System collect, store, or process Personally Identifiable
+    Information (PII)? Answer "Yes" if the {{system_name}} collects, stores, or processes
+    Personally Identifiable Information (PII) about individuals. Answer  "No" if the
+    system contains only publicly available information and no information about individuals.'
   type: yesno
 - id: system_data
   title: System Data
-  prompt: >-
-    Describe the data your IT System collects, stores, or processes.
-    Describe in general terms the data that the {{system_name}} handles. Summarize
-    why the information is being collected or processed.
-    {% if system_personal_data == "yes" %}Be sure to summarize what kind of personal
-    data the system collects and why. {% endif %}
+  prompt: Describe the data your IT System collects, stores, or processes. Describe
+    in general terms the data that the {{system_name}} handles. Summarize why the
+    information is being collected or processed. {% if system_personal_data == "yes"
+    %}Be sure to summarize what kind of personal data the system collects and why.
+    {% endif %}
   type: longtext
 - id: pta_needed
   title: PTA Needed
@@ -173,14 +172,14 @@ questions:
     value: ~
 - id: system_connection
   title: Connection with another system?
-  prompt: >-
-    IMPORTANT: Does the IT System connect to a system outside of your organization?
-    Answer "Yes" if the {{system_name}} connects with another IT system in another organization.
+  prompt: 'IMPORTANT: Does the IT System connect to a system outside of your organization?
+    Answer "Yes" if the {{system_name}} connects with another IT system in another
+    organization.'
   type: yesno
 - id: mou_yes
   title: Memorandum of Understanding
-  prompt: |-
-    We've added a 'Memorandum of Undestanding' because {{system_name}} connects to another organization's system.
+  prompt: We've added a 'Memorandum of Undestanding' because {{system_name}} connects
+    to another organization's system.
   type: interstitial
   impute:
   - condition: system_connection == "no"
