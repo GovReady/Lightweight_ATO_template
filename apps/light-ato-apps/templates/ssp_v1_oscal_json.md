@@ -80,6 +80,13 @@ title: SSP v1 (OSCAL/JSON)
            "%loop": {
                "uuid": "{{ requirement.uuid }}",
                "control_id": "{{ requirement.control_id }}",
+               "parameter-settings": {
+                 "%for": "setting in requirement.parameter_settings",
+                 "%loop": {
+                    "param_id": "{{ setting.param_id }}",
+                    "values": ["{{ setting.value }}"]
+                  }
+               },
                "statements": {
                  "%dict": "statement in requirement.statements",
                  "%item": {
