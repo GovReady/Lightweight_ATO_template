@@ -54,6 +54,8 @@ title: SSP v1 (OSCAL/JSON)
       }
     },
 
+    "i-types": "{{project.technical_information.info_type_table_01}}",
+
     "system-implementation": {
       "users": {
         "%dict": "user in project.system_info_technical.security_impact_users",
