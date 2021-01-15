@@ -42,7 +42,7 @@ catalog:
   status: stub
   vendor: none
   vendor_url: ~
-  version: 0.2.8
+  version: 0.2.9
 questions:
 
 #System Info
